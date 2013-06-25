@@ -4,11 +4,24 @@
 
 // Format a number to use a specific number of decimal places
 
-var numberToConvert = 5.1492
-var numberOfDecPlaces = 2
+var numberToConvert;
+var numberOfDecPlaces;
 
-console.log(numberToConvert + " when fixed to " + numberOfDecPlaces + " decimal places = " + numberToConvert.toFixed(numberOfDecPlaces));
-// end format number
+getFormattedNumber = function(numberToConvert, numberOfDecPlaces){
+    var convertedNumber = numberToConvert.toFixed(numberOfDecPlaces);
+    return convertedNumber;
+    
+};
+
+
+
+
+
+// Main Code
+
+var convertNumber = getFormattedNumber(5.14234, 2);
+console.log("When 5.14234 is formatted to 2 decimal places, the number is: " + convertNumber);
+
 
 
 
