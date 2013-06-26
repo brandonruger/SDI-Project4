@@ -65,6 +65,21 @@ var myLibrary = function(){
     }; // end does this string follow a phone number pattern function
     
     
+// Does a string follow a pattern like an email address?
+
+   var isStringAnEmailAdd = function(emailAddress){
+        if (emailAddress.indexOf("@") != (-1)) {
+            if (emailAddress.lastIndexOf("." === (emailAddress.length-4))) {
+                if (emailAddress.lastIndexOf(".") != -1) {
+                    return true;
+            } else {
+                return false;
+            }
+            }
+   
+        }
+   };// end function to see if a string follows the pattern of an email address
+    
     
     
     
@@ -72,7 +87,8 @@ var myLibrary = function(){
         "getFormattedNumber": getFormattedNumber,
         "convertStringToNumber": convertStringToNumber,
         "isStringAUrl": isStringAUrl,
-        "isStringAPhoneNum": isStringAPhoneNum
+        "isStringAPhoneNum": isStringAPhoneNum,
+        "isStringAnEmailAdd": isStringAnEmailAdd
     }
 
 };
@@ -91,8 +107,12 @@ console.log("It is " + brandonsLibrary.isStringAUrl("http://www.facebook.com") +
 console.log("It is " + brandonsLibrary.isStringAUrl("https://www.google.com") + " that this is a URL.");
 console.log("It is " + brandonsLibrary.isStringAUrl("ww.ebay.com") + " that this is a URL.");
 
-console.log("It is " + brandonsLibrary.isStringAPhoneNum("727-735-1133") + " that this string follows the pattern of a phone number");
-console.log("It is " + brandonsLibrary.isStringAPhoneNum("72-735-13") + " that this string follows the pattern of a phone number");
+console.log("It is " + brandonsLibrary.isStringAPhoneNum("727-735-1133") + " that this string follows the pattern of a phone number.");
+console.log("It is " + brandonsLibrary.isStringAPhoneNum("72-735-13") + " that this string follows the pattern of a phone number.");
+
+console.log("It is " + brandonsLibrary.isStringAnEmailAdd("bruger@fullsail.edu") + " that this string follows the pattern of an email address.");
+console.log("It is " + brandonsLibrary.isStringAnEmailAdd("bruger@fullsail") + " that this string follows the pattern of an email address.");
+
 
 
 
