@@ -40,10 +40,39 @@ var myLibrary = function(){
         }
     }; // end is the string a URL
     
+    
+// Does a string follow a pattern like a phone number?
+
+    var isStringAPhoneNum = function(string){
+        if (isNaN(string.substr(0, 3))) {
+            return false;
+            if (isNaN(string.substr(4, 3))) {
+                return false;
+                if (isNaN(string.substr(8, 4))) {
+                    return false;
+                }
+            }
+            return false;
+        } else {
+                if (string.indexOf("-") == 3){
+                    if (string.lastIndexOf("-") == 7) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+        }
+    }; // end does this string follow a phone number pattern function
+    
+    
+    
+    
+    
     return {
         "getFormattedNumber": getFormattedNumber,
         "convertStringToNumber": convertStringToNumber,
-        "isStringAUrl": isStringAUrl
+        "isStringAUrl": isStringAUrl,
+        "isStringAPhoneNum": isStringAPhoneNum
     }
 
 };
@@ -62,6 +91,8 @@ console.log("It is " + brandonsLibrary.isStringAUrl("http://www.facebook.com") +
 console.log("It is " + brandonsLibrary.isStringAUrl("https://www.google.com") + " that this is a URL.");
 console.log("It is " + brandonsLibrary.isStringAUrl("ww.ebay.com") + " that this is a URL.");
 
+console.log("It is " + brandonsLibrary.isStringAPhoneNum("727-735-1133") + " that this string follows the pattern of a phone number");
+console.log("It is " + brandonsLibrary.isStringAPhoneNum("72-735-13") + " that this string follows the pattern of a phone number");
 
 
 
