@@ -83,13 +83,15 @@ var myLibrary = function(){
    
 // Title case a string
     
-    var titleCaseAString = function(string){
-        var stringToArray = string.split(" ");
+    var titleCaseAString = function(stringToChange){
+        
+        var stringToArray = stringToChange.split(" ");
+        
         
         for (var i=0; i<stringToArray.length; i++) {
-            stringToArray = stringToArray[i].charAt(0).toUpperCase();
-            
-        } return stringToArray;
+        var newString = stringToArray[i].substr(0, 1).toUpperCase() + stringToArray[i].substr(1).toLowerCase();
+        var titleCaseString = newString.join;
+        } return titleCaseString;
         
     }; // end title case function
     
