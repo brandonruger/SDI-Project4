@@ -79,16 +79,29 @@ var myLibrary = function(){
    
         }
    };// end function to see if a string follows the pattern of an email address
+   
+   
+// Title case a string
     
+    var titleCaseAString = function(string){
+        var stringToArray = string.split(" ");
+        
+        for (var i=0; i<stringToArray.length; i++) {
+            stringToArray = stringToArray[i].charAt(0).toUpperCase();
+            
+        } return stringToArray;
+        
+    }; // end title case function
     
-    
+
     
     return {
         "getFormattedNumber": getFormattedNumber,
         "convertStringToNumber": convertStringToNumber,
         "isStringAUrl": isStringAUrl,
         "isStringAPhoneNum": isStringAPhoneNum,
-        "isStringAnEmailAdd": isStringAnEmailAdd
+        "isStringAnEmailAdd": isStringAnEmailAdd,
+        "titleCaseAString": titleCaseAString
     }
 
 };
@@ -112,6 +125,8 @@ console.log("It is " + brandonsLibrary.isStringAPhoneNum("72-735-13") + " that t
 
 console.log("It is " + brandonsLibrary.isStringAnEmailAdd("bruger@fullsail.edu") + " that this string follows the pattern of an email address.");
 console.log("It is " + brandonsLibrary.isStringAnEmailAdd("bruger@fullsail") + " that this string follows the pattern of an email address.");
+
+console.log("If I title case the string, it should return a capital letter as the first letter in each word: " + brandonsLibrary.titleCaseAString("i hope this works"));
 
 
 
